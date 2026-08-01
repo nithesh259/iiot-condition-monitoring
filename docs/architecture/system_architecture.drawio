@@ -1,0 +1,66 @@
+# System Architecture
+
+## Overview
+
+The Industrial IoT Condition Monitoring System consists of four major layers:
+
+1. Hardware Layer
+2. Firmware Layer
+3. Communication Layer
+4. Visualization Layer
+
+
+## Data Flow
+
+Sensor
+↓
+ESP32 Firmware
+↓
+Wi-Fi
+↓
+MQTT Broker
+↓
+Node-RED Dashboard
+↓
+Monitoring System
+
+
+## Layers
+
+### Hardware Layer
+
+Responsible for collecting physical parameters.
+
+Examples:
+
+- Temperature
+- Current
+- Vibration
+
+
+### Firmware Layer
+
+ESP32 firmware performs:
+
+- Sensor reading
+- Data processing
+- JSON creation
+- MQTT publishing
+
+
+### Communication Layer
+
+Uses:
+
+- Wi-Fi
+- MQTT
+- JSON
+
+
+### Application Layer
+
+Provides:
+
+- Dashboard
+- Visualization
+- Alerts
