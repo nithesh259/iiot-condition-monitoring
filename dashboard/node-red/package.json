@@ -5,7 +5,8 @@
   "description": "IIoT Condition Monitoring Dashboard",
   "dependencies": {
     "node-red": "^4.0.0",
-    "node-red-dashboard": "^3.6.5"
+    "node-red-dashboard": "^3.6.5",
+    "node-red-node-ui-table": "^0.4.5"
   },
   "scripts": {
     "start": "node-red"

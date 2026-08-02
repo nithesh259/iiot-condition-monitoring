@@ -166,7 +166,8 @@
                 "db1614157d3afead",
                 "d758aac5a3c4766f",
                 "cef81d81483e948d",
-                "8a292f974f07e3ce"
+                "8a292f974f07e3ce",
+                "bf8fe7517b2ccb3e"
             ]
         ]
     },
@@ -503,25 +504,49 @@
         "y": 320,
         "wires": [
             [
-                "0b6fb3615a238818",
-                "ba54fdf07c823fb5"
+                "0b6fb3615a238818"
             ]
         ]
     },
     {
-        "id": "ba54fdf07c823fb5",
-        "type": "debug",
+        "id": "38027c865dcc483c",
+        "type": "file",
         "z": "5c9e0dff8ed3afb2",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 280,
-        "y": 400,
-        "wires": []
+        "name": "CSV Logger",
+        "filename": "D:\\PlatformIO\\Projects\\iiot\\iiot-condition-monitoring\\logs\\telemetry.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 450,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bf8fe7517b2ccb3e",
+        "type": "csv",
+        "z": "5c9e0dff8ed3afb2",
+        "name": "Telemetry CSV",
+        "spec": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "device_id,temperature,current,vibration,timestamp",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 480,
+        "y": 440,
+        "wires": [
+            [
+                "38027c865dcc483c"
+            ]
+        ]
     }
 ]
