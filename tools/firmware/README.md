@@ -1,10 +1,33 @@
-# Firmware Tools
+# Tools
 
-This directory contains helper scripts for firmware development.
+This directory contains helper scripts used during development.
 
-## Files
+## Structure
 
-- flash_firmware.ps1
-- monitor_serial.ps1
+tools/
 
-These scripts automate firmware flashing and serial monitoring.
+├── firmware/
+
+├── mqtt/
+
+├── scripts/
+
+└── utilities/
+
+## Modules
+
+### firmware
+
+Firmware flashing and serial monitor scripts.
+
+### mqtt
+
+MQTT simulator tools for testing without ESP32.
+
+### scripts
+
+Build and release automation.
+
+### utilities
+
+Project maintenance and backup utilities.
