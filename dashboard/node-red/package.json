@@ -1,27 +1,13 @@
 {
   "name": "iiot-condition-monitoring-dashboard",
   "version": "1.0.0",
-  "description": "Industrial IoT Condition Monitoring Dashboard using Node-RED",
   "private": true,
+  "description": "IIoT Condition Monitoring Dashboard",
   "dependencies": {
     "node-red": "^4.0.0",
-    "node-red-dashboard": "^3.6.5",
-    "node-red-node-ui-list": "^0.4.4",
-    "node-red-contrib-ui-level": "^0.1.46",
-    "node-red-contrib-moment": "^5.0.0"
+    "node-red-dashboard": "^3.6.5"
   },
   "scripts": {
     "start": "node-red"
-  },
-  "keywords": [
-    "iiot",
-    "mqtt",
-    "node-red",
-    "dashboard",
-    "esp32",
-    "grafana",
-    "condition-monitoring"
-  ],
-  "author": "Nithesh",
-  "license": "MIT"
+  }
 }

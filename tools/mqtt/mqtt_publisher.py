@@ -3,7 +3,7 @@ import time
 import paho.mqtt.client as mqtt
 from payload_generator import generate_payload
 
-BROKER = "broker.hivemq.com"
+BROKER = "18.158.244.81"
 PORT = 1883
 TOPIC = "iiot/condition-monitoring/telemetry"
 

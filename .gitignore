@@ -37,3 +37,9 @@ Thumbs.db
 *.elf
 *.bin
 *.map
+
+# ===============================
+# Node.js / Node-RED
+# ===============================
+**/node_modules/
+*.backup
