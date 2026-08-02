@@ -1,0 +1,35 @@
+apiVersion: 1
+
+groups:
+
+  - orgId: 1
+
+    name: Temperature Alerts
+
+    folder: IIoT
+
+    interval: 30s
+
+    rules:
+
+      - uid: high-temperature
+
+        title: High Temperature
+
+        condition: A
+
+        data: []
+
+        noDataState: NoData
+
+        execErrState: Error
+
+        for: 30s
+
+        annotations:
+
+          summary: Temperature exceeded threshold.
+
+        labels:
+
+          severity: warning

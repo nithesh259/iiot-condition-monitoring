@@ -1,0 +1,34 @@
+{
+  "title": "IIoT Condition Monitoring",
+  "timezone": "browser",
+  "editable": true,
+  "refresh": "5s",
+  "schemaVersion": 39,
+  "version": 1,
+  "panels": [
+    {
+      "title": "Temperature",
+      "type": "gauge"
+    },
+    {
+      "title": "Current",
+      "type": "gauge"
+    },
+    {
+      "title": "Vibration",
+      "type": "gauge"
+    },
+    {
+      "title": "Temperature Trend",
+      "type": "timeseries"
+    },
+    {
+      "title": "Current Trend",
+      "type": "timeseries"
+    },
+    {
+      "title": "Vibration Trend",
+      "type": "timeseries"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+apiVersion: 1
+
+datasources:
+  - name: IIoT-MQTT
+    uid: iiot-mqtt
+    type: grafana-mqtt-datasource
+    access: proxy
+    editable: true
+
+    jsonData:
+      uri: tcp://broker.hivemq.com:1883
+
+      clientId: grafana-dashboard
+
+      username: ""
+
+      password: ""
+
+      keepAlive: 60
+
+      cleanSession: true
+
+      qos: 1
+
+      subscribeTopic: iiot/condition-monitoring/telemetry
