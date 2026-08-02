@@ -165,7 +165,8 @@
                 "43004ce4880d7c9f",
                 "db1614157d3afead",
                 "d758aac5a3c4766f",
-                "cef81d81483e948d"
+                "cef81d81483e948d",
+                "8a292f974f07e3ce"
             ]
         ]
     },
@@ -394,7 +395,7 @@
         "nodata": "",
         "dot": false,
         "ymin": "0",
-        "ymax": "100",
+        "ymax": "25",
         "removeOlder": 1,
         "removeOlderPoints": "",
         "removeOlderUnit": "3600",
@@ -438,7 +439,7 @@
         "nodata": "",
         "dot": false,
         "ymin": "0",
-        "ymax": "100",
+        "ymax": "0.5",
         "removeOlder": 1,
         "removeOlderPoints": "",
         "removeOlderUnit": "3600",
@@ -464,5 +465,63 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "0b6fb3615a238818",
+        "type": "ui_text",
+        "z": "5c9e0dff8ed3afb2",
+        "group": "dashboard_group",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Machine status text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 150,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "8a292f974f07e3ce",
+        "type": "function",
+        "z": "5c9e0dff8ed3afb2",
+        "name": "Machine status",
+        "func": "let t = msg.payload.temperature;\nlet c = msg.payload.current;\nlet v = msg.payload.vibration;\n\nif (t > 35 || v > 0.40) {\n    msg.payload = \"🔴 FAULT\";\n} else if (t > 30 || v > 0.25) {\n    msg.payload = \"🟡 WARNING\";\n} else {\n    msg.payload = \"🟢 RUNNING\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "0b6fb3615a238818",
+                "ba54fdf07c823fb5"
+            ]
+        ]
+    },
+    {
+        "id": "ba54fdf07c823fb5",
+        "type": "debug",
+        "z": "5c9e0dff8ed3afb2",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 400,
+        "wires": []
     }
 ]
