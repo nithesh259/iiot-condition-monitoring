@@ -1,0 +1,32 @@
+{
+  "telemetry": {
+    "device_id": "ESP32_001",
+    "temperature": 32.4,
+    "current": 1.20,
+    "vibration": 0.03,
+    "timestamp": "2026-08-01T10:30:00Z"
+  },
+
+  "status": {
+    "device_id": "ESP32_001",
+    "status": "ONLINE",
+    "firmware_version": "1.0.0",
+    "uptime_seconds": 120
+  },
+
+  "diagnostics": {
+    "device_id": "ESP32_001",
+    "wifi_rssi": -58,
+    "heap_memory": 215640,
+    "cpu_frequency": 240,
+    "mqtt_connected": true
+  },
+
+  "alert": {
+    "device_id": "ESP32_001",
+    "type": "TEMPERATURE_HIGH",
+    "value": 78.5,
+    "threshold": 70.0,
+    "timestamp": "2026-08-01T10:35:10Z"
+  }
+}
