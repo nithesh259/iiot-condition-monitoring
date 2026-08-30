@@ -2,18 +2,14 @@
 
 void SensorManager::begin()
 {
-    temperatureSensor.begin();
-    currentSensor.begin();
-    vibrationSensor.begin();
+    ultrasonicSensor.begin();
 }
 
 SensorData SensorManager::readSensors()
 {
     SensorData data;
 
-    data.temperature = temperatureSensor.readTemperature();
-    data.current = currentSensor.readCurrent();
-    data.vibration = vibrationSensor.readVibration();
+    data.distance = ultrasonicSensor.readDistance();
 
     return data;
 }

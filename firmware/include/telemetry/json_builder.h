@@ -9,9 +9,7 @@ public:
 
     static String createTelemetryPayload(
         const String& deviceID,
-        float temperature,
-        float current,
-        float vibration,
+        float distance,
         const String& status
     );
 

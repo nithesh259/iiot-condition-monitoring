@@ -35,3 +35,91 @@ Read more about using header files in official GCC documentation:
 * Computed Includes
 
 https://gcc.gnu.org/onlinedocs/cpp/Header-Files.html
+
+
+
+
+
+
+//Brownout  Troubleshooting
+## ESP32-CAM Brownout Troubleshooting
+
+### Problem
+
+After uploading the firmware, the ESP32-CAM repeatedly restarted and the
+Serial Monitor displayed:
+
+    Brownout detector was triggered
+
+### Cause
+
+A brownout occurs when the ESP32 detects that its supply voltage has fallen
+below a safe operating level.
+
+In this setup, the ESP32-CAM was powered through the FTDI adapter's 5V
+output. Although the voltage was set to 5V, the FTDI may not provide enough
+current for the ESP32-CAM, particularly during startup and Wi-Fi operation.
+
+### Boot sequence
+
+ESP32-CAM
+    ↓
+Boot
+    ↓
+PSRAM initialization
+    ↓
+Higher power/current demand
+    ↓
+Supply voltage drops
+    ↓
+Brownout detector
+    ↓
+ESP32 reset
+    ↓
+Boot repeats
+
+### Diagnosis
+
+The following were verified:
+
+- PlatformIO build succeeded
+- AI Thinker ESP32-CAM was detected
+- Firmware upload completed successfully
+- FTDI was detected on COM3
+- Serial Monitor received ESP32 boot messages
+- HC-SR04 was disconnected during testing
+
+Therefore, the problem was related to the power supply rather than
+firmware compilation, uploading, or the ultrasonic sensor.
+
+### Solution
+
+Use a stable regulated 5V power source capable of supplying sufficient
+current for the ESP32-CAM.
+
+The FTDI can be used for USB-to-serial communication while the ESP32-CAM
+receives power from an appropriate supply.
+
+Do not connect two independent 5V sources together.
+
+Always ensure that the ESP32-CAM and FTDI have a common GND when the FTDI
+is being used for serial communication.
+
+### Important
+
+Correct voltage does not necessarily mean sufficient current. An ESP32-CAM
+can require significantly more current during startup and Wi-Fi activity,
+so an inadequate USB-to-serial adapter power output can cause repeated
+brownout resets.
+
+connection                  ESP32-CAM
+              ┌─────────────┐
+External +5V ─┤ 5V          │
+External GND ─┤ GND         │
+              │             │
+FTDI TX ──────┤ U0R         │
+FTDI RX ──────┤ U0T         │
+FTDI GND ─────┤ GND         │
+              └─────────────┘
+
+              i guess use 5v h+ battery

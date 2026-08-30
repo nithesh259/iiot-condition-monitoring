@@ -3,17 +3,13 @@
 
 String JsonBuilder::createTelemetryPayload(
     const String& deviceID,
-    float temperature,
-    float current,
-    float vibration,
+    float distance,
     const String& status)
 {
     StaticJsonDocument<512> document;
 
     document["deviceId"] = deviceID;
-    document["temperature"] = temperature;
-    document["current"] = current;
-    document["vibration"] = vibration;
+    document["distance"] = distance;
     document["status"] = status;
     document["timestamp"] = millis();
 

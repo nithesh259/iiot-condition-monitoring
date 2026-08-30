@@ -18,9 +18,7 @@ void TelemetryService::publishTelemetry()
     String payload =
         JsonBuilder::createTelemetryPayload(
             DEVICE_ID,
-            data.temperature,
-            data.current,
-            data.vibration,
+            data.distance,
             "NORMAL");
 
     mqttService.publish(

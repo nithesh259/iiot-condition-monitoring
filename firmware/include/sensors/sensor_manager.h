@@ -1,15 +1,11 @@
 #ifndef SENSOR_MANAGER_H
 #define SENSOR_MANAGER_H
 
-#include "sensors/temperature_sensor.h"
-#include "sensors/current_sensor.h"
-#include "sensors/vibration_sensor.h"
+#include "sensors/ultrasonic_sensor.h"
 
 struct SensorData
 {
-    float temperature;
-    float current;
-    float vibration;
+    float distance;
 };
 
 class SensorManager
@@ -20,9 +16,7 @@ public:
     SensorData readSensors();
 
 private:
-    TemperatureSensor temperatureSensor;
-    CurrentSensor currentSensor;
-    VibrationSensor vibrationSensor;
+    UltrasonicSensor ultrasonicSensor;
 };
 
 #endif
